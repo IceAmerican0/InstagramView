@@ -2,7 +2,7 @@
 //  InstagramCollectionViewCell.swift
 //  Instagram
 //
-//  Created by 박성준 on 2023/10/16.
+//  Created by Khai on 2023/10/16.
 //
 
 import UIKit
@@ -42,8 +42,9 @@ final class InstagramCollectionViewCell: UICollectionViewCell {
     }
     
     private func buildLayouts() {
-        contentView.flex.justifyContent(.center).define {
+        contentView.flex.justifyContent(.center).alignItems(.center).define {
             $0.addItem(imageView)
+            $0.addItem(titleLabel).marginTop(5)
         }
     }
     

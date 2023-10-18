@@ -2,14 +2,13 @@
 //  HomeViewController.swift
 //  Instagram
 //
-//  Created by 박성준 on 2023/10/16.
+//  Created by Khai on 2023/10/16.
 //
 
 import UIKit
 import FlexLayout
 import PinLayout
 import Then
-import RxSwift
 
 class HomeViewController: UIViewController {
     
@@ -19,10 +18,15 @@ class HomeViewController: UIViewController {
         $0.delegate = self
         $0.register(InstagramCollectionViewCell.self, forCellWithReuseIdentifier: "InstagramCollectionViewCell")
     }
+    
+    let viewModel = HomeViewModel()
+    var loadedData: [ClothInfo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(container)
+        
+        bind()
     }
     
     override func viewDidLayoutSubviews() {
@@ -37,7 +41,13 @@ class HomeViewController: UIViewController {
             $0.addItem(collectionView)
         }
     }
-
+    
+    private func bind() {
+        Task {
+            loadedData = try await viewModel.loadList()
+            collectionView.reloadData()
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate {

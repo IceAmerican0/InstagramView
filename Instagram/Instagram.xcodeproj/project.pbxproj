@@ -15,9 +15,6 @@
 		5C25775D2ADCF35B00C461EA /* InstagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C25775C2ADCF35B00C461EA /* InstagramTests.swift */; };
 		5C2577672ADCF35B00C461EA /* InstagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2577662ADCF35B00C461EA /* InstagramUITests.swift */; };
 		5C2577692ADCF35B00C461EA /* InstagramUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2577682ADCF35B00C461EA /* InstagramUITestsLaunchTests.swift */; };
-		5C2577772ADCF56E00C461EA /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5C2577762ADCF56E00C461EA /* RxCocoa */; };
-		5C2577792ADCF56E00C461EA /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 5C2577782ADCF56E00C461EA /* RxRelay */; };
-		5C25777B2ADCF56E00C461EA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5C25777A2ADCF56E00C461EA /* RxSwift */; };
 		5C25777E2ADCF57C00C461EA /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 5C25777D2ADCF57C00C461EA /* FlexLayout */; };
 		5C2577812ADCF58A00C461EA /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 5C2577802ADCF58A00C461EA /* PinLayout */; };
 		5C2577842ADCF59C00C461EA /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 5C2577832ADCF59C00C461EA /* Then */; };
@@ -27,6 +24,9 @@
 		5C25778C2ADD111500C461EA /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C25778B2ADD111500C461EA /* Date+.swift */; };
 		5C2577922ADD154000C461EA /* ClothInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2577912ADD154000C461EA /* ClothInfo.swift */; };
 		5C2577952ADD1EF600C461EA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2577942ADD1EF600C461EA /* HomeViewModel.swift */; };
+		5CA706512ADE3F1B002BA772 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA706502ADE3F1B002BA772 /* JsonParser.swift */; };
+		5CA7067A2ADF6947002BA772 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA706792ADF6947002BA772 /* HomeTabBarController.swift */; };
+		5CA7067C2ADF6EFE002BA772 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA7067B2ADF6EFE002BA772 /* EmptyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +65,9 @@
 		5C25778B2ADD111500C461EA /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		5C2577912ADD154000C461EA /* ClothInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothInfo.swift; sourceTree = "<group>"; };
 		5C2577942ADD1EF600C461EA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		5CA706502ADE3F1B002BA772 /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
+		5CA706792ADF6947002BA772 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		5CA7067B2ADF6EFE002BA772 /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,11 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C25777B2ADCF56E00C461EA /* RxSwift in Frameworks */,
 				5C2577842ADCF59C00C461EA /* Then in Frameworks */,
 				5C2577812ADCF58A00C461EA /* PinLayout in Frameworks */,
-				5C2577792ADCF56E00C461EA /* RxRelay in Frameworks */,
-				5C2577772ADCF56E00C461EA /* RxCocoa in Frameworks */,
 				5C25777E2ADCF57C00C461EA /* FlexLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,7 +130,7 @@
 				5C25778D2ADD14B000C461EA /* Scene */,
 				5C2577932ADD1C6200C461EA /* ViewModel */,
 				5C2577902ADD150100C461EA /* Model */,
-				5C25778F2ADD14D400C461EA /* Extension */,
+				5CA706522ADE3FA8002BA772 /* Util */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -157,6 +157,8 @@
 			children = (
 				5C2577492ADCF35A00C461EA /* HomeViewController.swift */,
 				5C2577852ADCFC8000C461EA /* InstagramCollectionViewCell.swift */,
+				5CA706792ADF6947002BA772 /* HomeTabBarController.swift */,
+				5CA7067B2ADF6EFE002BA772 /* EmptyViewController.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -194,6 +196,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		5CA706522ADE3FA8002BA772 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5CA706502ADE3F1B002BA772 /* JsonParser.swift */,
+				5C25778F2ADD14D400C461EA /* Extension */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -211,9 +222,6 @@
 			);
 			name = Instagram;
 			packageProductDependencies = (
-				5C2577762ADCF56E00C461EA /* RxCocoa */,
-				5C2577782ADCF56E00C461EA /* RxRelay */,
-				5C25777A2ADCF56E00C461EA /* RxSwift */,
 				5C25777D2ADCF57C00C461EA /* FlexLayout */,
 				5C2577802ADCF58A00C461EA /* PinLayout */,
 				5C2577832ADCF59C00C461EA /* Then */,
@@ -291,7 +299,6 @@
 			);
 			mainGroup = 5C2577392ADCF35A00C461EA;
 			packageReferences = (
-				5C2577752ADCF56E00C461EA /* XCRemoteSwiftPackageReference "RxSwift" */,
 				5C25777C2ADCF57C00C461EA /* XCRemoteSwiftPackageReference "FlexLayout" */,
 				5C25777F2ADCF58A00C461EA /* XCRemoteSwiftPackageReference "PinLayout" */,
 				5C2577822ADCF59C00C461EA /* XCRemoteSwiftPackageReference "Then" */,
@@ -340,10 +347,13 @@
 			files = (
 				5C2577922ADD154000C461EA /* ClothInfo.swift in Sources */,
 				5C2577952ADD1EF600C461EA /* HomeViewModel.swift in Sources */,
+				5CA7067A2ADF6947002BA772 /* HomeTabBarController.swift in Sources */,
 				5C25778C2ADD111500C461EA /* Date+.swift in Sources */,
 				5C2577882ADD07C800C461EA /* Network.swift in Sources */,
 				5C25774A2ADCF35A00C461EA /* HomeViewController.swift in Sources */,
+				5CA7067C2ADF6EFE002BA772 /* EmptyViewController.swift in Sources */,
 				5C2577462ADCF35A00C461EA /* AppDelegate.swift in Sources */,
+				5CA706512ADE3F1B002BA772 /* JsonParser.swift in Sources */,
 				5C25778A2ADD082C00C461EA /* Resource.swift in Sources */,
 				5C2577482ADCF35A00C461EA /* SceneDelegate.swift in Sources */,
 				5C2577862ADCFC8000C461EA /* InstagramCollectionViewCell.swift in Sources */,
@@ -687,14 +697,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5C2577752ADCF56E00C461EA /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
 		5C25777C2ADCF57C00C461EA /* XCRemoteSwiftPackageReference "FlexLayout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/layoutBox/FlexLayout";
@@ -722,21 +724,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5C2577762ADCF56E00C461EA /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5C2577752ADCF56E00C461EA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		5C2577782ADCF56E00C461EA /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5C2577752ADCF56E00C461EA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		5C25777A2ADCF56E00C461EA /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5C2577752ADCF56E00C461EA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
 		5C25777D2ADCF57C00C461EA /* FlexLayout */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5C25777C2ADCF57C00C461EA /* XCRemoteSwiftPackageReference "FlexLayout" */;

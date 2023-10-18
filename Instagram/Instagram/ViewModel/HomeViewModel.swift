@@ -2,7 +2,7 @@
 //  HomeViewModel.swift
 //  Instagram
 //
-//  Created by 박성준 on 2023/10/16.
+//  Created by Khai on 2023/10/16.
 //
 
 import Foundation
@@ -10,9 +10,15 @@ import Foundation
 final class HomeViewModel {
     let network = Network(configuration: .default)
     
-    func loadList() {
+    func loadList() async throws -> [ClothInfo] {
         let resource = Resource<ClothInfo>()
+        let clothInfo: [ClothInfo]
         
-        network.load(resource)
+        do {
+            clothInfo = try await Network(configuration: .default).load(resource)
+            return clothInfo
+        } catch {
+            return []
+        }
     }
 }

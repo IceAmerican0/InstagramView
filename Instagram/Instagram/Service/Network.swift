@@ -2,11 +2,10 @@
 //  Network.swift
 //  Instagram
 //
-//  Created by 박성준 on 2023/10/16.
+//  Created by Khai on 2023/10/16.
 //
 
 import Foundation
-import RxSwift
 
 final class Network {
     let session: URLSession
@@ -15,13 +14,10 @@ final class Network {
         session = URLSession(configuration: configuration)
     }
     
-    func load<T>(_ resource: Resource<T>) -> Observable<T> {
-        guard let request = resource.urlRequest else {
-            return .error(NetworkError.invalidRequest)
-        }
-        
-        return session.rx
-            .asObservable()
+    func load<T>(_ resource: Resource<T>) async throws -> [ClothInfo] {
+        guard let request = resource.urlRequest else { return [] }
+        let data = try await URLSession.shared.data(for: request).0
+        return try JsonParser.decode(of: data, to: [ClothInfo].self)
     }
 }
 
